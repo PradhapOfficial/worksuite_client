@@ -1,0 +1,62 @@
+body {
+    height: 100vh;
+    background-color: #393E46;
+    color: #EEEEEE;
+}
+
+#root{
+   height: inherit;
+}
+
+.mainContainer {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.topContainer {
+    height: fit-content;
+    padding: 15px;
+    background: #222831;
+    text-align: center;
+}
+
+.bottomContainer {
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftContainer {
+    width: 100px;
+    background: #2c2e31;
+    height: inherit;
+}
+
+.rightContainer {
+    width: 100%;
+    height: inherit;
+    //background: #323437;
+}
+
+.worksuiteTabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.worksuiteTab {
+    padding: 15px;
+}
+
+.worksuiteTab:hover{
+    background: #222831;
+    cursor: pointer;
+}
+
+.currentTabColor{
+    background: #222831;
+}
