@@ -1,0 +1,115 @@
+.addOpenAIContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: absolute;
+    left: 40%;
+    background: #222831;
+    width: fit-content;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+.apiKeyCont {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 20px 10px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.openAIPaddingCont {
+    flex: auto;
+}
+
+.apiKeyLbl {
+    padding: 10px;
+}
+
+.apiKeyInpt {
+    padding: 10px;
+    flex: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #393E46;
+    color: #EEEEEE;
+}
+
+.cancelBtn {
+    padding: 10px;
+}
+
+.cancelBtn:hover{
+    cursor: pointer;
+    background: #2c2e31;
+    border-radius: 5px;
+}
+
+.saveBtn {
+    padding: 10px;
+}
+
+.saveBtn:hover{
+    cursor: pointer;
+    background: #2c2e31;
+    border-radius: 5px;
+}
+
+.openAIChatWindowContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+    
+.appsContainer {
+    width: inherit;
+    height: inherit;
+}
+
+.openAIContainer {
+    width: inherit;
+    height: inherit;
+    padding: 30px;
+}
+
+.openAIChatBtmCon {
+    background-color: #222831;
+    color: #EEEEEE;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 500px;
+    outline: none;
+    resize: none;
+    height: 80px;
+    color: #d1d0c5;
+}
+
+.openAIChatQueryCont {
+    display: flex;
+    justify-content: center;
+    flex: auto;
+}
+
+.openAIChatTopCon {
+    background-color: #393E46;
+    color: #EEEEEE;
+    border: none;
+    height: 80%;
+    outline: none;
+    resize: none;
+    width: 90%;
+    color: #d1d0c5bf;
+    font-size: 15px;
+    width: 96%;
+    line-height: 35px;
+}

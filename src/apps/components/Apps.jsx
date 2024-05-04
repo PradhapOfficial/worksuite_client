@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import {WORKSUITE_TABS} from "../../main/actions/Constants"
 import "../styles/Apps.scss";
+import { OpenAI } from "./openai/OpenAI";
 export class Apps extends Component {
     constructor(props){
         super(props);
@@ -12,7 +13,9 @@ export class Apps extends Component {
             return null;
         }
         return(
-            <div className="appsContainer">Apps Container</div>
+            <div className="appsContainer">
+                <OpenAI />
+            </div>
         );
     }
 }

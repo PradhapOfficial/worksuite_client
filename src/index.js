@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import {Main} from './main/components/Main';
 import { createRoot } from 'react-dom/client';
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('worksuiteMainContainer'));
 root.render(
   <React.StrictMode>
     <Main />
