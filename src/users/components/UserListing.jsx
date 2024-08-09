@@ -18,8 +18,8 @@ export class UserListing extends Component {
                 </div>
                 <div className="usrListRecords">
                     <div className="unameCont">
-                        <div className="dispNameCont">Pradhap M</div>
-                        <div className="emailIdCont">pradhapsoft@gmail.com</div>
+                        <div className="dispNameCont">Pradhap</div>
+                        <div className="emailIdCont">pradhap@mail.com</div>
                     </div>
 
                     <div className="uroleCont">Super Admin</div>

@@ -21,18 +21,6 @@ export class Main extends Component {
         });
     }
 
-    // getCurrentTabComponents = () => {
-    //     switch(this.state.currentTab){
-    //         case WORKSUITE_TABS.USERS:
-    //             <Listing/>
-    //         case WORKSUITE_TABS.APPS:
-    //             <div>Apps Page</div>
-                
-    //         default:
-    //             <div>Home Page</div>
-    //     }
-    // }
-
     render(){
         return(
             <div className="mainContainer">
