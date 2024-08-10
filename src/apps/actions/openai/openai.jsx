@@ -13,8 +13,6 @@ export default function chat(payload, callback){
       }).then((resp)=>{
         console.log(resp.headers);
         
-        setAuthHeader(resp);
-        
         if(callback && (callback instanceof Function)){
             // let choices = resp.data.choices;
             // let message = "";
@@ -23,8 +21,6 @@ export default function chat(payload, callback){
             // })
 
             let message = resp.data.candidates[0].content.parts[0].text;
-
-            console.log("mesage from axios : "+JSON.stringify(message));
             callback(message);
         }
     }).catch((error)=>{

@@ -6,6 +6,7 @@ import { TopComponent } from "./TopComponent";
 import {WORKSUITE_TABS} from "../actions/Constants";
 import { Users } from "../../users/components/Users";
 import { Apps } from "../../apps/components/Apps"
+import setAuthHeader from "../config/axios";
 export class Main extends Component {
     constructor(props){
         super(props);
@@ -13,6 +14,11 @@ export class Main extends Component {
             currentTab: WORKSUITE_TABS.HOME
         }
     }
+
+    componentDidMount = () =>{
+        setAuthHeader(window.token);
+    }
+        
 
     updateCurrentTab = (currentTab) => {
         console.log("updateCurrentTab :: "+currentTab);
