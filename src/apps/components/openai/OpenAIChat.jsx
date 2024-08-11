@@ -1,18 +1,30 @@
 import React, { Component, createRef } from "react";
-import chat from "../../actions/openai/openai";
+import {chat, getGeminiAIIntegrationDetails} from "../../actions/openai/openai";
 export class OpenAIChat extends Component {
     constructor(props){
         super(props);
         this.queryRef = createRef();
         this.state = {
-            content: ""
+            content: "",
+            integrationId: null
         }
+    }
+
+    componentDidMount = () =>{
+        getGeminiAIIntegrationDetails(this.setIntegrationState);
     }
 
     setChatState = (message) =>{
         console.log("Mesage : "+JSON.stringify(message));
         this.setState({
             content: message
+        });
+    }
+
+    setIntegrationState = (integrationId) =>{
+        console.log("integrationId : "+JSON.stringify(integrationId));
+        this.setState({
+            integrationId: integrationId
         });
     }
 
@@ -23,7 +35,7 @@ export class OpenAIChat extends Component {
             const payload = {
                 content:this.queryRef.current.value
             }
-            chat(payload, this.setChatState);
+            chat(payload, this.setChatState, this.state.integrationId);
         }
     }
 

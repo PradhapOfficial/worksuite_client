@@ -1,18 +1,16 @@
 import axios from 'axios';
-import setAuthHeader from '../../../main/config/axios';
+import { Apps } from '../Constants';
 
-// export const CHAT_URL = "/worksuite/api/v1/8796290/openai/95591121/7845457649/64520202432";
-export const CHAT_URL = `${window.isDevelopment ? "/worksuite" : ""}/api/v1/8796290/geminiai/95591121/7845457650/87253520140`;
+export const CHAT_URL = `${window.isDevelopment ? "/worksuite" : ""}/api/v1/${window.orgId}/geminiai`;
+export const GET_GEMINIAI_INTEGRATION_URL = `${window.isDevelopment ? "/worksuite" : ""}/api/v1/${window.orgId}/integration/${window.userId}/${Apps.GEMINI_AI_APP_ID}`;
 
-export default function chat(payload, callback){
-    axios.post(CHAT_URL, JSON.stringify(payload),
+export function chat(payload, callback, integrationId){
+    axios.post(`${CHAT_URL}/${integrationId}`, JSON.stringify(payload),
     {
         headers: {
           'Content-Type': 'application/json',
         },
       }).then((resp)=>{
-        console.log(resp.headers);
-        
         if(callback && (callback instanceof Function)){
             // let choices = resp.data.choices;
             // let message = "";
@@ -24,6 +22,16 @@ export default function chat(payload, callback){
             callback(message);
         }
     }).catch((error)=>{
-        console.log(console.error());
+        console.log(error);
     })
+}
+
+export function getGeminiAIIntegrationDetails(setIntegrationIdCallback){
+  axios.get(GET_GEMINIAI_INTEGRATION_URL).then((resp)=>{
+    if(setIntegrationIdCallback && setIntegrationIdCallback instanceof Function){
+      setIntegrationIdCallback(resp.data.integrationDetails.integrationId);
+    }
+  }).catch((error)=>{
+    console.log(error);
+  });
 }
